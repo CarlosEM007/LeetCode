@@ -14,39 +14,18 @@
 
             //Console.WriteLine(TrionicArray.IsTrionic([1, 3, 5, 4, 2, 6]));
 
-            TestarArvore();
+            testarNode();
         }
 
-        private static void Recursivo(int valor)
+        private static void testarNode()
         {
-            if (valor == 5) return;
+            ListNode root = new(0);
 
-            Recursivo(valor + 1);
+            ListNode root2 = new(1);
 
-            Console.WriteLine($"{valor}");
+            Console.WriteLine(AddTwoNumber.AddTwoNumbers(root, root2));
         }
 
-        private static void TestarArvore()
-        {
-            TreeNode root = new TreeNode(1);
-
-            // nível 1
-            root.left = new TreeNode(2);
-            root.right = new TreeNode(3);
-
-            // nível 2
-            root.left.left = new TreeNode(4);
-            root.left.right = new TreeNode(5);
-
-            root.right.right = new TreeNode(6);
-
-            // nível 3
-            root.left.left.left = new TreeNode(8);
-
-
-
-            Console.WriteLine(new BalancedBinaryTree().IsBalanced(root));
-        }
     }
 }
 
