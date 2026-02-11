@@ -28,30 +28,22 @@
 
         private static void TestarArvore()
         {
-            TreeNode root = new TreeNode(2);
+            TreeNode root = new TreeNode(1);
 
             // nível 1
-            root.left = new TreeNode(1);
+            root.left = new TreeNode(2);
             root.right = new TreeNode(3);
 
             // nível 2
-            root.left.left = new TreeNode(0);
-            root.left.right = new TreeNode(7);
+            root.left.left = new TreeNode(4);
+            root.left.right = new TreeNode(5);
 
-            root.right.left = new TreeNode(9);
-            root.right.right = new TreeNode(1);
+            root.right.right = new TreeNode(6);
 
             // nível 3
-            root.left.left.left = new TreeNode(2);
+            root.left.left.left = new TreeNode(8);
 
-            root.left.right.left = new TreeNode(1);
-            root.left.right.right = new TreeNode(0);
 
-            root.right.right.left = new TreeNode(8);
-            root.right.right.right = new TreeNode(8);
-
-            // nível 4
-            root.left.right.right.left = new TreeNode(7);
 
             Console.WriteLine(new BalancedBinaryTree().IsBalanced(root));
         }

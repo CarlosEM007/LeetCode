@@ -15,7 +15,7 @@
             int subdir = 0;
             int subesq = 0;
 
-            int subindicetotal = 0;
+            int subindicetotal = 1;
 
             if (root.right != null)
             {
@@ -28,7 +28,7 @@
             subdir = 0;
             subesq = 0;
 
-            subindicetotal = 0;
+            subindicetotal = 1;
 
             if (root.left != null)
             {
@@ -51,7 +51,7 @@
             if (primeiro)
             {
                 inddir = SubIndice;
-                SubIndice = 0;
+                SubIndice = 1;
             }
 
             if(Node.left != null)
@@ -79,24 +79,9 @@
                 SubTotalEsq = IndiceEsq;
             }
 
-            if(inddir < IndiceDir)
+            if(SubIndice < Indice)
             {
-                inddir = IndiceDir;
-            }
-
-            if (inddir < IndiceEsq)
-            {
-                inddir = IndiceEsq;
-            }
-
-            if (indesq < IndiceDir)
-            {
-                indesq = IndiceDir;
-            }
-
-            if (indesq < IndiceEsq)
-            {
-                indesq = IndiceEsq;
+                SubIndice = Indice;
             }
         }
 
