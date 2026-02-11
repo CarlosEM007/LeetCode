@@ -2,64 +2,60 @@
 {
     public class AddTwoNumber
     {
-        public static ListNode AddTwoNumbers(ListNode l1, ListNode l2)
+        private ListNode AddNewNode(ListNode l1, ListNode l2, bool Sobrou)
         {
-            List<int> Valores = new();
-            bool PassouDe10 = false;
+            ListNode Node = new();
 
-            do
+            if (l1 == null && l2 == null)
             {
-                int a = l1 != null ? l1.val : 0;
-                int b = l2 != null ? l2.val : 0;
-
-                int c = a + b;
-
-                if (PassouDe10)
+                if (Sobrou)
                 {
-                    c += 1;
-                    PassouDe10 = false;
+                    Node.val = 1;
+                    return Node;
                 }
 
-                if(c >= 10)
-                {
-                    PassouDe10 = true;
-                    c -= 10;
-                }
-
-                Valores.Add(c); 
-
-                if (l1?.next == null && l2?.next == null)
-                {
-                    if (PassouDe10)
-                    {
-                        Valores.Add(1);
-                    }
-
-                    break;
-                }
-
-                l1 = l1?.next;
-                l2 = l2?.next;
-
-            } while (true);
-
-            ListNode Node = new(-1);
-
-            for(int i = Valores.Count - 1; i >= 0; i--)
-            {
-                if(i == Valores.Count - 1)
-                {
-                    Node.val = Valores[i];
-                }
-
-                if(i - 1 >= 0)
-                {
-                    ListNode n = new(Valores[i - 1], Node);
-                    Node = n;
-                }
+                return null;
             }
 
+            int a = l1 != null ? l1.val : 0;
+            int b = l2 != null ? l2.val : 0;
+
+
+            Node.val = Calcula(a, b, ref Sobrou);
+            Node.next = AddNewNode(l1?.next, l2?.next, Sobrou);
+
             return Node;
+        }
+
+        private int Calcula(int a, int b, ref bool Sobrou)
+        {
+            int c = a + b;
+
+            if (Sobrou)
+            {
+                c += 1;
+                Sobrou = false;
+            }
+
+            if (c >= 10)
+            {
+                Sobrou = true;
+                c -= 10;
+            }
+
+            return c;
+        }
+
+        public ListNode AddTwoNumbers(ListNode l1, ListNode l2)
+        {
+            int a = l1 != null ? l1.val : 0;
+            int b = l2 != null ? l2.val : 0;
+
+            bool Sobrou = false;
+
+            ListNode Root = new(Calcula(a, b, ref Sobrou), AddNewNode(l1.next, l2.next, Sobrou));
+
+            return Root;
         }
     }
 
