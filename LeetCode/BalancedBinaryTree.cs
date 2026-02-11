@@ -2,101 +2,36 @@
 {
     public class BalancedBinaryTree
     {
-        int TotalEsq = 0;
-        int TotalDir = 0;
-
-        int inddir = 0;
-        int indesq = 0;
-
         public bool IsBalanced(TreeNode root)
         {
             if (root == null) return true;
 
-            int subdir = 0;
-            int subesq = 0;
+            int AlturaEsquerda = EstaEquilibrado(root.left);
+            int AlturaDireita = EstaEquilibrado(root.right);
 
-            int subindicetotal = 1;
-
-            if (root.right != null)
+            if(AlturaEsquerda == -1 || AlturaDireita == -1 || Math.Abs(AlturaEsquerda - AlturaDireita) > 1)
             {
-                VerificaTree(root.right, ref TotalDir, ref subdir, ref subesq, 1, 1, 1, ref subindicetotal, true);
-
-                if (!EstaEquilibrado(inddir, indesq)) return false;
-                if (!EstaEquilibrado(subdir, subesq)) return false;
+                return false;
             }
 
-            subdir = 0;
-            subesq = 0;
-
-            subindicetotal = 1;
-
-            if (root.left != null)
-            {
-                VerificaTree(root.left, ref TotalEsq, ref subdir, ref subesq, 1, 1, 1, ref subindicetotal, true);
-
-                if (!EstaEquilibrado(inddir, indesq)) return false;
-                if (!EstaEquilibrado(subdir, subesq)) return false;
-            }
-
-            return EstaEquilibrado(TotalEsq, TotalDir);
+            return true;
         }
 
-        private void VerificaTree(TreeNode Node, ref int Total, ref int SubTotalDir, ref int SubTotalEsq, int Indice, int IndiceEsq, int IndiceDir, ref int SubIndice, bool primeiro = false)
+        private int EstaEquilibrado(TreeNode root)
         {
-            if(Node.right != null)
+            if (root == null)
             {
-                VerificaTree(Node.right, ref Total, ref SubTotalDir, ref SubTotalEsq, Indice + 1, IndiceEsq, IndiceDir + 1, ref SubIndice);
+                return 0;
             }
 
-            if (primeiro)
-            {
-                inddir = SubIndice;
-                SubIndice = 1;
-            }
+            int AlturaEsquerda = EstaEquilibrado(root.left);
+            int AlturaDireita = EstaEquilibrado(root.right);
 
-            if(Node.left != null)
+            if (AlturaEsquerda == -1 || AlturaDireita == -1 || Math.Abs(AlturaEsquerda - AlturaDireita) > 1)
             {
-                VerificaTree(Node.left, ref Total, ref SubTotalDir, ref SubTotalEsq, Indice + 1, IndiceEsq + 1, IndiceDir, ref SubIndice);
+                return -1;
             }
-
-            if (primeiro)
-            {
-                indesq = SubIndice;
-            }
-
-            if (Indice > Total)
-            {
-                Total = Indice;
-            }
-
-            if(IndiceDir > SubTotalDir)
-            {
-                SubTotalDir = IndiceDir;
-            }
-
-            if (IndiceEsq > SubTotalEsq)
-            {
-                SubTotalEsq = IndiceEsq;
-            }
-
-            if(SubIndice < Indice)
-            {
-                SubIndice = Indice;
-            }
-        }
-
-        private bool EstaEquilibrado(int Val1, int Val2)
-        {
-            if (Val1 == Val2)
-            {
-                return true;
-            }
-            else if (Math.Abs(Val1 - Val2) == 1)
-            {
-                return true;
-            }
-
-            return false;
+            return Math.Max(AlturaEsquerda + 1, AlturaDireita + 1);
         }
     }
 
