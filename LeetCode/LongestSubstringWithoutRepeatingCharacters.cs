@@ -10,50 +10,30 @@ namespace LeetCode
     {
         public static int LengthOfLongestSubstring(string s)
         {
-            List<StringBuilder> Strings = new List<StringBuilder>();
-            int IndiceAuxiliar = 0;
+            StringBuilder retorno = new();
 
             for(int i = 0; i < s.Length; i++)
             {
-                if(Strings.Count == 0)
-                {
-                    Strings.Add(new());
-                }
-
+                StringBuilder auxiliar = new();
                 for(int x = i; x < s.Length; x++)
                 {
-                    if (Strings[IndiceAuxiliar].ToString().Contains(s[x]))
+                    if (auxiliar.ToString().Contains(s[x]))
                     {
-                        Strings.Add(new());
-                        IndiceAuxiliar += 1;
-
                         break;
                     }
                     else
                     {
-                        Strings[IndiceAuxiliar].Append(s[x]);
+                        auxiliar.Append(s[x]);
                     }
                 }
-            }
 
-            if (!Strings.Any()) return 0;
-
-            return BiggerStringBuilder(Strings);
-        }
-
-        private static int BiggerStringBuilder(List<StringBuilder> s)
-        {
-            int Count = 0;
-
-            for(int i = 0; i < s.Count; i++)
-            {
-                if (s[i].Length > Count)
+                if(auxiliar.Length > retorno.Length)
                 {
-                    Count = s[i].Length;
+                    retorno = auxiliar;
                 }
             }
 
-            return Count;
+            return retorno.Length;
         }
     }
 }
