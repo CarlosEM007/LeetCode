@@ -10,20 +10,20 @@ namespace LeetCode
     {
         public static int LengthOfLongestSubstring(string s)
         {
-            StringBuilder retorno = new();
+            string retorno = "";
 
             for(int i = 0; i < s.Length; i++)
             {
-                StringBuilder auxiliar = new();
+                string auxiliar = "";
                 for(int x = i; x < s.Length; x++)
                 {
-                    if (auxiliar.ToString().Contains(s[x]))
+                    if (auxiliar.Contains(s[x]))
                     {
                         break;
                     }
                     else
                     {
-                        auxiliar.Append(s[x]);
+                        auxiliar += s[x];
                     }
                 }
 

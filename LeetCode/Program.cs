@@ -14,7 +14,7 @@
 
             //Console.WriteLine(TrionicArray.IsTrionic([1, 3, 5, 4, 2, 6]));
 
-            Console.WriteLine(LongestSubstringWithoutRepeatingCharacters.LengthOfLongestSubstring("dvdf"));
+            Console.WriteLine(LongestSubstringWithoutRepeatingCharacters.LengthOfLongestSubstring("abcdabc"));
         }
     }
 }
