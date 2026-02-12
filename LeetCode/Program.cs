@@ -14,18 +14,8 @@
 
             //Console.WriteLine(TrionicArray.IsTrionic([1, 3, 5, 4, 2, 6]));
 
-            testarNode();
+            Console.WriteLine(LongestSubstringWithoutRepeatingCharacters.LengthOfLongestSubstring("dvdf"));
         }
-
-        private static void testarNode()
-        {
-            ListNode root = new(0);
-
-            ListNode root2 = new(1);
-
-            Console.WriteLine(AddTwoNumber.AddTwoNumbers(root, root2));
-        }
-
     }
 }
 
