@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeetCode
+namespace LeetCode.Hard
 {
     public static class MedianOfTwoSortedArrays
     {
+        // https://leetcode.com/problems/median-of-two-sorted-arrays/description/
+
         public static double FindMedianSortedArrays(int[] nums1, int[] nums2)
         {
             nums1 = nums1.Concat(nums2).Order().ToArray();

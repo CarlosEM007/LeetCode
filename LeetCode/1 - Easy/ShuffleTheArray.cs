@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeetCode
+namespace LeetCode.Easy
 {
     public static class ShuffleTheArray
     {
+        // https://leetcode.com/problems/shuffle-the-array/
+
         public static int[] Shuffle(int[] nums, int n)
         {
             int[] retorno = new int[nums.Length];

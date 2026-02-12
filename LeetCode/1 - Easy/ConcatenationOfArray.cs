@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeetCode
+namespace LeetCode.Easy
 {
     public static class ConcatenationOfArray
     {
+        // https://leetcode.com/problems/concatenation-of-array/
+
         public static int[] GetConcatenation(int[] nums)
         {
-            int[] retorno = new int[(nums.Length) * 2];
+            int[] retorno = new int[nums.Length * 2];
             int auxiliar = 0;
 
             for(int i = 0; i < 2; i++)

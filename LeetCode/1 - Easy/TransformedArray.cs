@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeetCode
+namespace LeetCode.Easy
 {
     public static class TransformedArray
     {
+        // https://leetcode.com/problems/transformed-array/
+
         public static int[] ConstructTransformedArray(int[] nums)
         {
             int[] Retorno = new int[nums.Length];

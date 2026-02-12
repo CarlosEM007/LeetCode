@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeetCode
+namespace LeetCode.Medium
 {
     public static class LongestSubstringWithoutRepeatingCharacters
     {
+        // https://leetcode.com/problems/longest-substring-without-repeating-characters/
+
         public static int LengthOfLongestSubstring(string s)
         {
             string retorno = "";

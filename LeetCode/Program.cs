@@ -12,11 +12,11 @@
             // Console.WriteLine("[{0}]", string.Join(", ", TransformedArray.ConstructTransformedArray([-10])));
             // Console.WriteLine("[{0}]", string.Join(", ", TransformedArray.ConstructTransformedArray([-10, -10])));
 
-            //Console.WriteLine(TrionicArray.IsTrionic([1, 3, 5, 4, 2, 6]));
+            // Console.WriteLine(TrionicArray.IsTrionic([1, 3, 5, 4, 2, 6]));
 
-            //Console.WriteLine(LongestSubstringWithoutRepeatingCharacters.LengthOfLongestSubstring("abcdabc"));
+            // Console.WriteLine(LongestSubstringWithoutRepeatingCharacters.LengthOfLongestSubstring("abcdabc"));
 
-            Console.WriteLine(MedianOfTwoSortedArrays.FindMedianSortedArrays([1, 2], [3, 4]));
+            // Console.WriteLine(MedianOfTwoSortedArrays.FindMedianSortedArrays([1, 2], [3, 4]));
         }
     }
 }

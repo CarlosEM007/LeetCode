@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeetCode
+namespace LeetCode.Easy
 {
     public static class MaxConsecutiveOnes
     {
+        // https://leetcode.com/problems/max-consecutive-ones/
+
         public static int FindMaxConsecutiveOnes(int[] nums)
         {
             int MelhorSequencia = 0;

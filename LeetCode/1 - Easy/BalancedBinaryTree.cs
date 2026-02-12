@@ -1,7 +1,9 @@
-﻿namespace LeetCode
+﻿namespace LeetCode.Easy
 {
     public class BalancedBinaryTree
     {
+        // https://leetcode.com/problems/balanced-binary-tree/
+
         public bool IsBalanced(TreeNode root)
         {
             if (root == null) return true;

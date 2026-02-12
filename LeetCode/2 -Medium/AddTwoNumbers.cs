@@ -1,7 +1,9 @@
-﻿namespace LeetCode
+﻿namespace LeetCode.Medium
 {
     public class AddTwoNumber
     {
+        // https://leetcode.com/problems/add-two-numbers/description/
+
         private ListNode AddNewNode(ListNode l1, ListNode l2, bool Sobrou)
         {
             ListNode Node = new();

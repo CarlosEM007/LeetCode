@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeetCode
+namespace LeetCode.Easy
 {
     public static class TrionicArray
     {
+        // https://leetcode.com/problems/trionic-array-i/
+
         public static bool IsTrionic(int[] nums)
         {
             if (nums.Length < 4) return false;
