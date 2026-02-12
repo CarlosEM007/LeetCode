@@ -4,7 +4,80 @@
     {
         // https://leetcode.com/problems/string-to-integer-atoi/description/
 
-        public int MyAtoi(string s)
+        public static int MyAtoi(string s)
+        {
+            if(string.IsNullOrEmpty(s) || string.IsNullOrWhiteSpace(s))
+            {
+                return 0;
+            }
+
+            int inteiro;
+
+            string valor = "";
+
+            if(!int.TryParse(s[0].ToString(), out inteiro))
+            {
+                if (s[0] != '-' && s[0] != '+' && s[0] != ' ')
+                {
+                    return 0;
+                }
+            }
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                if ((s[i] == '-' || s[i] == '+') && valor == "")
+                {
+                    valor += s[i];
+                    continue;
+                }
+                else if((s[i] == '-' || s[i] == '+') && valor != "")
+                {
+                    break;
+                }
+
+
+                if (s[i] == ' ' && valor == "")
+                {
+                    continue;
+                }
+
+                int.TryParse(s[i].ToString(), out inteiro);
+
+                if (inteiro == 0 && s[i] != '0')
+                {
+                    break;
+                }
+
+                valor += s[i];
+            }
+            
+            if(valor == "+" || valor == "-")
+            {
+                return 0;
+            }
+
+            if(!int.TryParse(valor, out int result))
+            {
+                if(valor == "")
+                {
+                    return 0;
+                }
+
+                if (valor[0] != '-')
+                {
+                    return int.MaxValue;
+                }
+                else
+                {
+                    return int.MinValue;
+                }
+            }
+
+            return result;
+        }
+
+
+        public int MyAtoi_1(string s)
         {
             string strInteiro = string.Empty;
 

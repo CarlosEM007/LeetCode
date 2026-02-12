@@ -1,4 +1,6 @@
-﻿namespace LeetCode
+﻿using LeetCode.Medium;
+
+namespace LeetCode
 {
     public class LeetCode()
     {
@@ -17,6 +19,8 @@
             // Console.WriteLine(LongestSubstringWithoutRepeatingCharacters.LengthOfLongestSubstring("abcdabc"));
 
             // Console.WriteLine(MedianOfTwoSortedArrays.FindMedianSortedArrays([1, 2], [3, 4]));
+
+            Console.WriteLine(StringToIntegerAtoi.MyAtoi(" b11228552307"));
         }
     }
 }
