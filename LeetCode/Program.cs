@@ -14,7 +14,9 @@
 
             //Console.WriteLine(TrionicArray.IsTrionic([1, 3, 5, 4, 2, 6]));
 
-            Console.WriteLine(LongestSubstringWithoutRepeatingCharacters.LengthOfLongestSubstring("abcdabc"));
+            //Console.WriteLine(LongestSubstringWithoutRepeatingCharacters.LengthOfLongestSubstring("abcdabc"));
+
+            Console.WriteLine(MedianOfTwoSortedArrays.FindMedianSortedArrays([1, 2], [3, 4]));
         }
     }
 }
