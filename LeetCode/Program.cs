@@ -1,4 +1,6 @@
 ﻿using LeetCode.Medium;
+using LeetCode._1___Easy;
+using LeetCode.Common;
 
 namespace LeetCode
 {
@@ -6,6 +8,13 @@ namespace LeetCode
     {
         public static void Main(string[] args)
         {
+            ListNode list1 = new ListNode(1, new ListNode(2, new ListNode(4)));
+            ListNode list2 = new ListNode(1, new ListNode(3, new ListNode(4)));
+
+            ListNode resultado = MergeTwoSortedLists.MergeTwoLists(list1, list2);
+
+            Console.WriteLine(resultado);
+
             // Console.WriteLine("[{0}]", string.Join(", ", ConcatenationOfArray.GetConcatenation([1, 3, 2, 1])));
             // Console.WriteLine("[{0}]", string.Join(", ", ShuffleTheArray.Shuffle([2, 5, 1, 3, 4, 7], 3)));
             // Console.WriteLine(MaxConsecutiveOnes.FindMaxConsecutiveOnes([1, 1, 0, 1, 1, 1]));
@@ -20,7 +29,7 @@ namespace LeetCode
 
             // Console.WriteLine(MedianOfTwoSortedArrays.FindMedianSortedArrays([1, 2], [3, 4]));
 
-            Console.WriteLine(StringToIntegerAtoi.MyAtoi(" b11228552307"));
+            // Console.WriteLine(StringToIntegerAtoi.MyAtoi(" b11228552307"));
         }
     }
 }
