@@ -1,6 +1,7 @@
-﻿using LeetCode.Medium;
-using LeetCode._1___Easy;
+﻿using LeetCode._1___Easy;
+using LeetCode._2__Medium;
 using LeetCode.Common;
+using LeetCode.Medium;
 
 namespace LeetCode
 {
@@ -8,12 +9,18 @@ namespace LeetCode
     {
         public static void Main(string[] args)
         {
-            ListNode list1 = new ListNode(1, new ListNode(2, new ListNode(4)));
-            ListNode list2 = new ListNode(1, new ListNode(3, new ListNode(4)));
+            string teste1 = LongestPalindromicSubstring.LongestPalindrome("babad"); // bab
+            string teste2 = LongestPalindromicSubstring.LongestPalindrome("cbbd"); // bb
 
-            ListNode resultado = MergeTwoSortedLists.MergeTwoLists(list1, list2);
+            Console.WriteLine(teste1);
+            Console.WriteLine(teste2);
 
-            Console.WriteLine(resultado);
+            //ListNode list1 = new ListNode(1, new ListNode(2, new ListNode(4)));
+            //ListNode list2 = new ListNode(1, new ListNode(3, new ListNode(4)));
+
+            //ListNode resultado = MergeTwoSortedLists.MergeTwoLists(list1, list2);
+
+            //Console.WriteLine(resultado);
 
             // Console.WriteLine("[{0}]", string.Join(", ", ConcatenationOfArray.GetConcatenation([1, 3, 2, 1])));
             // Console.WriteLine("[{0}]", string.Join(", ", ShuffleTheArray.Shuffle([2, 5, 1, 3, 4, 7], 3)));
