@@ -17,7 +17,7 @@ namespace LeetCode._2__Medium
 
             for(int i = 0; i < s.Length; i++)
             {
-                if (Bigger.Length > Original.ToString().Length)
+                if (Bigger.Length > Original.Length)
                     return Bigger;
 
                 for(int x = 0; x < s.Length - i; x++)
@@ -27,12 +27,12 @@ namespace LeetCode._2__Medium
 
                     bool IsPalindrome = Normal.SequenceEqual(Invert);
 
-                    Bigger = IsPalindrome && (Normal.ToString().Length > Bigger.Length) 
+                    Bigger = IsPalindrome && (Normal.Length > Bigger.Length) 
                         ? Normal.ToString() 
                         : Bigger; 
                 }
 
-                Original = Original.Slice(1, Original.ToString().Length - 1);
+                Original = Original.Slice(1);
             }
 
             return Bigger;
