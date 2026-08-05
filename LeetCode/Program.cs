@@ -9,8 +9,8 @@ namespace LeetCode
     {
         public static void Main(string[] args)
         {
-            string teste1 = LongestPalindromicSubstring.LongestPalindrome("aacabdkacaa");
-            string teste2 = LongestPalindromicSubstring.LongestPalindrome("cbbd"); // bb
+            string teste1 = ZigzagConversion.Convert("AB", 1);
+            string teste2 = ZigzagConversion.Convert("PAYPALISHIRING", 4);
 
             Console.WriteLine(teste1);
             Console.WriteLine(teste2);
