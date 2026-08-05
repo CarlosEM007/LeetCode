@@ -9,7 +9,7 @@ namespace LeetCode
     {
         public static void Main(string[] args)
         {
-            string teste1 = LongestPalindromicSubstring.LongestPalindrome("babad"); // bab
+            string teste1 = LongestPalindromicSubstring.LongestPalindrome("aacabdkacaa");
             string teste2 = LongestPalindromicSubstring.LongestPalindrome("cbbd"); // bb
 
             Console.WriteLine(teste1);

@@ -1,48 +1,58 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LeetCode._2__Medium
+﻿namespace LeetCode._2__Medium
 {
     public static class LongestPalindromicSubstring
     {
-        //https://leetcode.com/problems/longest-palindromic-substring/description/
+        // https://leetcode.com/problems/longest-palindromic-substring/description/
 
         public static string LongestPalindrome(string s)
         {
-            string Bigger = "";
-            ReadOnlySpan<char> Original = s;
+            string bigger = s[0].ToString();
+            string palindrome = "";
 
-            for(int i = 0; i < s.Length; i++)
+            int i = 0;
+
+            int x = 0;
+            int y = 0;
+
+            do
             {
-                if (Bigger.Length > Original.Length)
-                    return Bigger;
+                x = i;
+                y = i + 1;
 
-                for(int x = 0; x < s.Length - i; x++)
+                palindrome = TakePalindrome(x, y, s);
+                bigger = PalindromeBigger(palindrome, bigger);
+
+                x = i - 1;
+                y = i + 1;
+
+                palindrome = TakePalindrome(x, y, s);
+                bigger = PalindromeBigger(palindrome, bigger);
+                
+
+                i += 1;
+            } while (i < s.Length);
+
+            return bigger;
+        }
+
+        private static string TakePalindrome(int x, int y, string s)
+        {
+            if (x > 0 && y + 1 < s.Length)
+            {
+                if ((s[x] == s[y]) && (s[x - 1] == s[y + 1]))
                 {
-                    ReadOnlySpan<char> Normal = Original.Slice(0, x + 1);
-                    ReadOnlySpan<char> Invert = StringInvert(Normal.ToString());
-
-                    bool IsPalindrome = Normal.SequenceEqual(Invert);
-
-                    Bigger = IsPalindrome && (Normal.Length > Bigger.Length) 
-                        ? Normal.ToString() 
-                        : Bigger; 
+                    x -= 1;
+                    y += 1;
+                    return TakePalindrome(x, y, s);
                 }
-
-                Original = Original.Slice(1);
             }
 
-            return Bigger;
+            int length = s.Length - x - (s.Length - (y + 1));
+
+            return x > -1 && y < s.Length ? (s[x] == s[y]) ? GetPalindrome(x, length, s) : "" : "";
         }
 
-        private static string StringInvert(string s)
-        {
-            char[] charArray = s.ToCharArray();
-            Array.Reverse(charArray);
-            return new string(charArray);
-        }
+        private static string GetPalindrome(int x, int y, string s) => s.Substring(x, y);
+        private static string PalindromeBigger(string p, string b) => p.Length > b.Length ? p : b;
     }
 }
