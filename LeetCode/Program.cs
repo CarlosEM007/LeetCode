@@ -9,11 +9,14 @@ namespace LeetCode
     {
         public static void Main(string[] args)
         {
-            string teste1 = ZigzagConversion.Convert("AB", 1);
-            string teste2 = ZigzagConversion.Convert("PAYPALISHIRING", 4);
+            int teste = IntegerReverse.Reverse(-123);
 
-            Console.WriteLine(teste1);
-            Console.WriteLine(teste2);
+
+            //string teste1 = ZigzagConversion.Convert("AB", 1);
+            //string teste2 = ZigzagConversion.Convert("PAYPALISHIRING", 4);
+
+            Console.WriteLine(teste);
+            //Console.WriteLine(teste2);
 
             //ListNode list1 = new ListNode(1, new ListNode(2, new ListNode(4)));
             //ListNode list2 = new ListNode(1, new ListNode(3, new ListNode(4)));
