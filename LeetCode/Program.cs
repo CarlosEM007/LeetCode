@@ -1,7 +1,4 @@
-﻿using LeetCode._1___Easy;
-using LeetCode._2__Medium;
-using LeetCode.Common;
-using LeetCode.Medium;
+﻿using LeetCode.Easy;
 
 namespace LeetCode
 {
@@ -9,7 +6,7 @@ namespace LeetCode
     {
         public static void Main(string[] args)
         {
-
+            int teste = new RomanToInteger_().RomanToInt("MCMXCIV");
         }
     }
 }
