@@ -1,6 +1,6 @@
 ﻿using LeetCode.Common;
 
-namespace LeetCode._2__Medium
+namespace LeetCode.Medium
 {
     public static class SwapNodesInPairs
     {

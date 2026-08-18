@@ -1,4 +1,4 @@
-﻿namespace LeetCode._2__Medium
+﻿namespace LeetCode.Medium
 {
     public static class LongestPalindromicSubstring
     {

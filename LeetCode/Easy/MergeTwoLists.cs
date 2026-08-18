@@ -1,7 +1,7 @@
 ﻿using LeetCode.Common;
 using System.Globalization;
 
-namespace LeetCode._1___Easy
+namespace LeetCode.Easy
 {
     public class MergeTwoSortedLists
     {
