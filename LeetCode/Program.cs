@@ -6,7 +6,7 @@ namespace LeetCode
     {
         public static void Main(string[] args)
         {
-            int teste = new RomanToInteger_().RomanToInt("MCMXCIV");
+            Console.WriteLine(IndiceFirstOccurrence.StrStr("hello", "ll"));
         }
     }
 }
